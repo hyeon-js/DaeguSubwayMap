@@ -30,7 +30,7 @@ class MainActivity : Activity() {
 
     override fun onCreateOptionsMenu(menu: Menu): Boolean {
         menu.add(0, 0, 0, "새로 고침")
-//            .setIcon()
+            .setIcon(R.drawable.ic_update)
             .setShowAsAction(MenuItem.SHOW_AS_ACTION_IF_ROOM)
         menu.add(0, 1, 0, "앱 정보")
         menu.add(0, 2, 0, "깃허브로 이동")
