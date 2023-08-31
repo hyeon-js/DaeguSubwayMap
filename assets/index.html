@@ -12,6 +12,11 @@ Dtro Map
 </title>
 </head>
 <style>
+@font-face {
+ font-family: "NanumSquare";
+ src: url("./NanumSquareR.ttf");
+ font-weight: normal;
+}
 .bold {
   font-family: NanumSquareBold;
 }
@@ -41,9 +46,11 @@ circle {
 text {
   font-size: 32px;
 }
+text.trn {
+  font-weight: bold;
+}
 </style>
 <body bgcolor=#FFFFFF>
-<link href="https://hangeul.pstatic.net/hangeul_static/css/nanum-square.css" rel="stylesheet">
 <div>
 <svg width="100%" viewBox="0 0 900 3300" id="map">
 
@@ -160,18 +167,24 @@ var pos = [[
     {x: 450, y: 2850, stn: "범물", dir: "left"},
     {x: 450, y: 2950, stn: "용지", dir: "left"}
 ]];
+var trn = ["반월당", "청라언덕", "남산"];
 
 var map = document.getElementById("map");
 var src = '';
 for(var n=0;n<3;n++){
 pos[n].forEach((e) => {
 src += '<circle cx="' + e.x + '" cy="' + e.y + '" r="11" onClick="onIconClicked(\'' + e.stn + '\');" />';
+if (trn.includes(e.stn)) return;
 var x = e.x, y = e.y;
 if (e.dir == 'left') x += 30;
 if (e.dir == 'right') x -= 30;
 if (e.dir == 'center') y += 50;
 src += '<text x=' + x + ' y=' + y + ' onClick="onTextClicked(this);" class=' + e.dir + '>' + e.stn + '</text>';
 });
+}
+var m = [16, 13, 19];
+for(var n=0;n<trn.length;n++){
+src += '<text x=' + (pos[n][m[n]].x + 20) + ' y=' + (pos[n][m[n]].y + 40) + ' onClick="onTextClicked(this);" class="left trn">' + pos[n][m[n]].stn + '</text>';
 }
 map.innerHTML += src;
 
