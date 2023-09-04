@@ -11,6 +11,9 @@ import android.webkit.WebSettings
 import android.webkit.WebView
 import android.webkit.WebViewClient
 import android.widget.LinearLayout
+import android.widget.Toast
+import com.hyeonjs.library.HttpRequester
+import java.lang.Exception
 
 
 class MainActivity : Activity() {
@@ -19,7 +22,7 @@ class MainActivity : Activity() {
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         when (item.getItemId()) {
-//            0 ->
+            0 -> updateSubwayInfo();
 //            1 ->
             2 -> startActivity(
                 Intent(Intent.ACTION_VIEW, Uri.parse("https://github.com/hyeon-js/DaeguSubwayMap"))
@@ -29,7 +32,7 @@ class MainActivity : Activity() {
     }
 
     override fun onCreateOptionsMenu(menu: Menu): Boolean {
-        menu.add(0, 0, 0, "새로 고침")
+        menu.add(0, 0, 0, "열차 위치 새로 고침")
             .setIcon(R.drawable.ic_update)
             .setShowAsAction(MenuItem.SHOW_AS_ACTION_IF_ROOM)
         menu.add(0, 1, 0, "앱 정보")
@@ -51,4 +54,31 @@ class MainActivity : Activity() {
         layout.addView(web)
         setContentView(layout)
     }
+
+    private fun updateSubwayInfo() {
+        Thread{
+            try {
+                val url = "https://api.hyeonjs.com/dtro";
+                val data = HttpRequester.create(url).get()
+                if (data == null) {
+                    toast("열차 위치 갱신 실패")
+                } else {
+                    runOnUiThread {
+                        web!!.loadUrl("javascript:updateData('$data');")
+                        toast("열차 위치를 갱신했어요")
+                    }
+                }
+            }catch (e: Exception) {
+                toast(e.toString())
+            }
+        }.start()
+    }
+
+    private fun toast(msg: String) {
+        runOnUiThread{
+            Toast.makeText(this, msg, Toast.LENGTH_SHORT).show()
+        }
+    }
+
+
 }
