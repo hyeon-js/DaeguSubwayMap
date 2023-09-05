@@ -49,6 +49,14 @@ text {
 text.trn {
   font-weight: bold;
 }
+line {
+  stroke-width: 7;
+  stroke-linejoin: round;
+  stroke-linecap: round;
+}
+text.legend {
+  font-size: 24px;
+}
 </style>
 <body bgcolor=#FFFFFF>
 <div>
@@ -67,6 +75,14 @@ text.trn {
     450,50 450,2950
 	" fill="none" stroke="#FFB100" />
 <text class=line_name style='fill:#FFB100;' x=1250 y=1050>3호선</text>
+
+<!-- 범례 -->
+<line x1=50 y1=50 x2=100 y2=50 fill="none" stroke="#D93F5C" />
+<text x=110 y=50 class="left legend">1호선</text>
+<line x1=50 y1=100 x2=100 y2=100 fill="none" stroke="#00AA80" />
+<text x=110 y=100 class="left legend">2호선</text>
+<line x1=50 y1=150 x2=100 y2=150 fill="none" stroke="#FFB100" />
+<text x=110 y=150 class="left legend">3호선</text>
 
 </svg>
 </div>
