@@ -106,8 +106,8 @@ var pos = [[
     {x: 850, y: 1450, stn: "대구역", dir: "right"},
     {x: 850, y: 1550, stn: "중앙로", dir: "right"},
     {x: 650, y: 1750, stn: "반월당", dir: "left"},
-    {x: 450, y: 1950, stn: "남산", dir: "left", lot: true},
-    {x: 250, y: 1950, stn: "교대", dir: "center", lot: true},
+    {x: 450, y: 1950, stn: "남산", dir: "left", rot: {up: "right", down:"left"}},
+    {x: 250, y: 1950, stn: "교대", dir: "center", rot: {up: "right", down:"left"}},
     {x: 50, y: 2050, stn: "영대병원", dir: "left"},
     {x: 50, y: 2150, stn: "현충로", dir: "left"},
     {x: 50, y: 2250, stn: "안지랑", dir: "left"},
@@ -134,9 +134,9 @@ var pos = [[
     {x: 50, y: 1450, stn: "감삼", dir: "left"},
     {x: 50, y: 1550, stn: "두류", dir: "left"},
     {x: 50, y: 1650, stn: "내당", dir: "left"},
-    {x: 250, y: 1750, stn: "반고개", dir: "center", lot: true},
-    {x: 450, y: 1750, stn: "청라언덕", dir: "left", lot: true},
-    {x: 650, y: 1750, stn: "반월당", dir: "left", lot: true},
+    {x: 250, y: 1750, stn: "반고개", dir: "center", rot: {up: "left", down:"right"}},
+    {x: 450, y: 1750, stn: "청라언덕", dir: "left", rot: {up: "left", down:"right"}},
+    {x: 650, y: 1750, stn: "반월당", dir: "left", rot: {up: "left", down:"right"}},
     {x: 850, y: 1850, stn: "경대병원", dir: "right"},
     {x: 850, y: 1950, stn: "대구은행", dir: "right"},
     {x: 850, y: 2050, stn: "범어", dir: "right"},
@@ -212,18 +212,37 @@ var map = document.getElementById("map");
 var src = '';
 data.forEach((e, i) => {
     e.forEach((e, j) => {
-    	var x = pos[i][j].x, y = pos[i][j].y;
+    	var p = pos[i][j], size = 20;
+    	var x = p.x, y = p.y;
         y -= 20;
+		if (p.rot) {
+			size = 40;
+		}
+
         if (e.up) {
-        	var file = 'up';
         	x += 10;
-        	src += '<image xlink:href="images/' + file + '.png" x="' + x + '" y="' + y + '" width="20px" />';
+        	var dir = 'up';
+        	if (p.rot) {
+        		dir = p.rot[dir];
+        		x -= 30;
+        		if (dir == 'left') y -= 10;
+        		if (dir == 'right') y += 30;
+        	}
+        	src += '<image xlink:href="images/' + dir + '.png" x="' + x + '" y="' + y + '" width="' + size + 'px" />';
         }
+
         x = pos[i][j].x;
+        y = p.y - 20;
         if (e.dn) {
-        	var file = 'down';
         	x -= 30;
-        	src += '<image xlink:href="images/' + file + '.png" x="' + x + '" y="' + y + '" width="20px" />';
+        	var dir = 'down';
+        	if (p.rot) {
+        		dir = p.rot[dir];
+        		x += 10;
+        		if (dir == 'left') y -= 10;
+        		if (dir == 'right') y += 30;
+        	}
+        	src += '<image xlink:href="images/' + dir + '.png" x="' + x + '" y="' + y + '" width="' + size + 'px" />';
         }
     });
 });
