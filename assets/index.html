@@ -216,13 +216,13 @@ data.forEach((e, i) => {
         y -= 20;
         if (e.up) {
         	var file = 'up';
-        	x -= 30;
+        	x += 10;
         	src += '<image xlink:href="images/' + file + '.png" x="' + x + '" y="' + y + '" width="20px" />';
         }
         x = pos[i][j].x;
         if (e.dn) {
         	var file = 'down';
-        	x += 10;
+        	x -= 30;
         	src += '<image xlink:href="images/' + file + '.png" x="' + x + '" y="' + y + '" width="20px" />';
         }
     });
