@@ -1,0 +1,55 @@
+@font-face {
+    font-family: "NanumSquare";
+    src: url("./NanumSquareR.ttf");
+    font-weight: normal;
+}
+
+.bold {
+    font-family: NanumSquareBold;
+}
+
+.left {
+    text-anchor: start;
+}
+
+.right {
+    text-anchor: end;
+}
+
+body {
+    font-family: NanumSquare;
+    margin: 0px;
+    font-size: 32px;
+    text-anchor: middle;
+    dominant-baseline: middle;
+}
+
+polyline {
+    stroke-width: 15;
+    stroke-linejoin: round;
+    stroke-linecap: round;
+}
+
+circle {
+    fill: #FFFFFF;
+    stroke: #000000;
+    stroke-width: 3;
+}
+
+text {
+    font-size: 32px;
+}
+
+text.trn {
+    font-weight: bold;
+}
+
+line {
+    stroke-width: 7;
+    stroke-linejoin: round;
+    stroke-linecap: round;
+}
+
+text.legend {
+    font-size: 24px;
+}
