@@ -48,7 +48,16 @@ class MainActivity : Activity() {
         val settings: WebSettings = web!!.settings
         settings.javaScriptEnabled = true
         settings.builtInZoomControls = true
-        web?.webChromeClient = WebChromeClient()
+        settings.allowFileAccessFromFileURLs = true;
+        settings.allowUniversalAccessFromFileURLs = true;
+//        web?.webChromeClient = WebChromeClient()
+
+        web?.webChromeClient = object : WebChromeClient() {
+            override fun onConsoleMessage(consoleMessage: ConsoleMessage): Boolean {
+                toast(consoleMessage.message())
+                return false
+            }
+        }
         web?.webViewClient = object : WebViewClient() {
             override fun onPageStarted(view: WebView?, url: String?, favicon: Bitmap?) {
                 super.onPageStarted(view, url, favicon)
