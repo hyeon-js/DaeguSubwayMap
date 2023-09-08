@@ -3,52 +3,55 @@
 © 2023 Hyeon.js, All rights reserved.
 -->
 <html>
+
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="user-scalable=no width=device-width" />
-<meta name="description" content="Dtro Map" />
-<title>
-Dtro Map
-</title>
-<link rel="stylesheet" type="text/css" href="style.css">
+	<meta charset="utf-8">
+	<meta name="viewport" content="user-scalable=no width=device-width" />
+	<meta name="description" content="Dtro Map" />
+	<title>
+		Dtro Map
+	</title>
+	<link rel="stylesheet" type="text/css" href="style.css">
 </head>
+
 <body bgcolor=#FFFFFF>
 <div>
-<svg width="100%" viewBox="0 0 900 3300" id="map">
+	<svg width="100%" viewBox="0 0 900 3300" id="map">
 
-<!-- 1호선 -->
-<polyline points="
+		<!-- 1호선 -->
+		<polyline points="
     850,50 850,1600 800,1650 700,1650 650,1700 650,1750 650,1800 500,1950 100,1950 50,2000 50,3250
 	" fill="none" stroke="#D93F5C" />
-<!-- 2호선 -->
-<polyline points="
+		<!-- 2호선 -->
+		<polyline points="
     50,550 50,1700 100,1750 450,1750 800,1750 850,1800 850,3150
 	" fill="none" stroke="#00AA80" />
-<!-- 3호선 -->
-<polyline points="
+		<!-- 3호선 -->
+		<polyline points="
     450,50 450,2950
 	" fill="none" stroke="#FFB100" />
-<text class=line_name style='fill:#FFB100;' x=1250 y=1050>3호선</text>
+		<text class=line_name style='fill:#FFB100;' x=1250 y=1050>3호선</text>
 
-<!-- 범례 -->
-<line x1=50 y1=50 x2=100 y2=50 fill="none" stroke="#D93F5C" />
-<text x=110 y=50 class="left legend">1호선</text>
-<line x1=50 y1=100 x2=100 y2=100 fill="none" stroke="#00AA80" />
-<text x=110 y=100 class="left legend">2호선</text>
-<line x1=50 y1=150 x2=100 y2=150 fill="none" stroke="#FFB100" />
-<text x=110 y=150 class="left legend">3호선</text>
+		<!-- 범례 -->
+		<line x1=50 y1=50 x2=100 y2=50 fill="none" stroke="#D93F5C" />
+		<text x=110 y=50 class="left legend">1호선</text>
+		<line x1=50 y1=100 x2=100 y2=100 fill="none" stroke="#00AA80" />
+		<text x=110 y=100 class="left legend">2호선</text>
+		<line x1=50 y1=150 x2=100 y2=150 fill="none" stroke="#FFB100" />
+		<text x=110 y=150 class="left legend">3호선</text>
 
-</svg>
+	</svg>
 </div>
 <script src="./script.js"></script>
 <script>
-function onIconClicked(station) {
-alert('아이콘: ' + station);
-}
+    function onIconClicked(station) {
+<!--        alert('아이콘: ' + station);-->
+    }
 
-function onTextClicked(element) {
-alert('글자: ' + element.innerHTML.replace(/(<([^>]+)>)/g, ''));
-}
+    function onTextClicked(element) {
+<!--        alert('글자: ' + element.innerHTML.replace(/(<([^>]+)>)/g, ''));-->
+    }
 </script>
 </body>
+
 </html>
