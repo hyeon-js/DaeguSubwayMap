@@ -106,7 +106,7 @@ var pos = [[
     {x: 850, y: 1450, stn: "대구역", dir: "right"},
     {x: 850, y: 1550, stn: "중앙로", dir: "right"},
     {x: 650, y: 1750, stn: "반월당", dir: "left"},
-    {x: 450, y: 1950, stn: "남산", dir: "left", rot: {up: "right", down:"left"}},
+    {x: 450, y: 1950, stn: "명덕", dir: "left", rot: {up: "right", down:"left"}},
     {x: 250, y: 1950, stn: "교대", dir: "center", rot: {up: "right", down:"left"}},
     {x: 50, y: 2050, stn: "영대병원", dir: "left"},
     {x: 50, y: 2150, stn: "현충로", dir: "left"},
@@ -170,8 +170,8 @@ var pos = [[
     {x: 450, y: 1550, stn: "달성공원", dir: "left"},
     {x: 450, y: 1650, stn: "서문시장", dir: "left"},
     {x: 450, y: 1750, stn: "청라언덕", dir: "left"},
-    {x: 450, y: 1850, stn: "명덕", dir: "left"},
-    {x: 450, y: 1950, stn: "남산", dir: "left"},
+    {x: 450, y: 1850, stn: "남산", dir: "left"},
+    {x: 450, y: 1950, stn: "명덕", dir: "left"},
     {x: 450, y: 2050, stn: "건들바위", dir: "left"},
     {x: 450, y: 2150, stn: "대봉교", dir: "left"},
     {x: 450, y: 2250, stn: "수성시장", dir: "left"},
@@ -183,7 +183,7 @@ var pos = [[
     {x: 450, y: 2850, stn: "범물", dir: "left"},
     {x: 450, y: 2950, stn: "용지", dir: "left"}
 ]];
-var trn = ["반월당", "청라언덕", "남산"];
+var trn = ["반월당", "청라언덕", "명덕"];
 
 var map = document.getElementById("map");
 var src = '';
@@ -208,6 +208,13 @@ var mapData = map.innerHTML;
 
 function updateData(data) {
 data = JSON.parse(data);
+data[0].forEach((e, i) => {
+	var tmp = e.up;
+	data[0][i].up = e.dn;
+	data[0][i].dn = tmp;
+});
+data[0].reverse();
+
 var map = document.getElementById("map");
 var src = '';
 data.forEach((e, i) => {
@@ -228,7 +235,7 @@ data.forEach((e, i) => {
         		if (dir == 'left') y -= 10;
         		if (dir == 'right') y += 30;
         	}
-        	src += '<image xlink:href="images/' + dir + '.png" x="' + x + '" y="' + y + '" width="' + size + 'px" />';
+        	src += '<image xlink:href="images/' + dir + '.png" x="' + x + '" y="' + y + '" width="' + size + 'px" opacity="0.7" />';
         }
 
         x = pos[i][j].x;
@@ -242,7 +249,7 @@ data.forEach((e, i) => {
         		if (dir == 'left') y -= 10;
         		if (dir == 'right') y += 30;
         	}
-        	src += '<image xlink:href="images/' + dir + '.png" x="' + x + '" y="' + y + '" width="' + size + 'px" />';
+        	src += '<image xlink:href="images/' + dir + '.png" x="' + x + '" y="' + y + '" width="' + size + 'px" opacity="0.7" />';
         }
     });
 });
