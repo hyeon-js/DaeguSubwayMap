@@ -15,38 +15,38 @@ var pos = [[
     {x: 850, y: 1350, stn: "칠성시장", dir: "right"},
     {x: 850, y: 1450, stn: "대구역", dir: "right"},
     {x: 850, y: 1550, stn: "중앙로", dir: "right"},
-    {x: 650, y: 1750, stn: "반월당", dir: "left"},
-    {x: 450, y: 1950, stn: "명덕", dir: "left", rot: {up: "right", down:"left"}},
+    {x: 650, y: 1750, stn: "반월당"},
+    {x: 450, y: 1950, stn: "명덕", rot: {up: "right", down:"left"}},
     {x: 250, y: 1950, stn: "교대", dir: "center", rot: {up: "right", down:"left"}},
-    {x: 50, y: 2050, stn: "영대병원", dir: "left"},
-    {x: 50, y: 2150, stn: "현충로", dir: "left"},
-    {x: 50, y: 2250, stn: "안지랑", dir: "left"},
-    {x: 50, y: 2350, stn: "대명", dir: "left"},
-    {x: 50, y: 2450, stn: "서부정류장", dir: "left"},
-    {x: 50, y: 2550, stn: "송현", dir: "left"},
-    {x: 50, y: 2650, stn: "월촌", dir: "left"},
-    {x: 50, y: 2750, stn: "상인", dir: "left"},
-    {x: 50, y: 2850, stn: "월배", dir: "left"},
-    {x: 50, y: 2950, stn: "진천", dir: "left"},
-    {x: 50, y: 3050, stn: "대곡", dir: "left"},
-    {x: 50, y: 3150, stn: "화원", dir: "left"},
-    {x: 50, y: 3250, stn: "설화명곡", dir: "left"}
+    {x: 50, y: 2050, stn: "영대병원"},
+    {x: 50, y: 2150, stn: "현충로"},
+    {x: 50, y: 2250, stn: "안지랑"},
+    {x: 50, y: 2350, stn: "대명"},
+    {x: 50, y: 2450, stn: "서부정류장"},
+    {x: 50, y: 2550, stn: "송현"},
+    {x: 50, y: 2650, stn: "월촌"},
+    {x: 50, y: 2750, stn: "상인"},
+    {x: 50, y: 2850, stn: "월배"},
+    {x: 50, y: 2950, stn: "진천"},
+    {x: 50, y: 3050, stn: "대곡"},
+    {x: 50, y: 3150, stn: "화원"},
+    {x: 50, y: 3250, stn: "설화명곡"}
 ], [
-    {x: 50, y: 550, stn: "문양", dir: "left"},
-    {x: 50, y: 650, stn: "다사", dir: "left"},
-    {x: 50, y: 750, stn: "대실", dir: "left"},
-    {x: 50, y: 850, stn: "강창", dir: "left"},
-    {x: 50, y: 950, stn: "계명대", dir: "left"},
-    {x: 50, y: 1050, stn: "성서산업단지", dir: "left"},
-    {x: 50, y: 1150, stn: "이곡", dir: "left"},
-    {x: 50, y: 1250, stn: "용산", dir: "left"},
-    {x: 50, y: 1350, stn: "죽전", dir: "left"},
-    {x: 50, y: 1450, stn: "감삼", dir: "left"},
-    {x: 50, y: 1550, stn: "두류", dir: "left"},
-    {x: 50, y: 1650, stn: "내당", dir: "left"},
+    {x: 50, y: 550, stn: "문양"},
+    {x: 50, y: 650, stn: "다사"},
+    {x: 50, y: 750, stn: "대실"},
+    {x: 50, y: 850, stn: "강창"},
+    {x: 50, y: 950, stn: "계명대"},
+    {x: 50, y: 1050, stn: "성서산업단지"},
+    {x: 50, y: 1150, stn: "이곡"},
+    {x: 50, y: 1250, stn: "용산"},
+    {x: 50, y: 1350, stn: "죽전"},
+    {x: 50, y: 1450, stn: "감삼"},
+    {x: 50, y: 1550, stn: "두류"},
+    {x: 50, y: 1650, stn: "내당"},
     {x: 250, y: 1750, stn: "반고개", dir: "center", rot: {up: "left", down:"right"}},
-    {x: 450, y: 1750, stn: "청라언덕", dir: "left", rot: {up: "left", down:"right"}},
-    {x: 650, y: 1750, stn: "반월당", dir: "left", rot: {up: "left", down:"right"}},
+    {x: 450, y: 1750, stn: "청라언덕", rot: {up: "left", down:"right"}},
+    {x: 650, y: 1750, stn: "반월당", rot: {up: "left", down:"right"}},
     {x: 850, y: 1850, stn: "경대병원", dir: "right"},
     {x: 850, y: 1950, stn: "대구은행", dir: "right"},
     {x: 850, y: 2050, stn: "범어", dir: "right"},
@@ -62,36 +62,36 @@ var pos = [[
     {x: 850, y: 3050, stn: "임당", dir: "right"},
     {x: 850, y: 3150, stn: "영남대", dir: "right"}
 ], [
-    {x: 450, y: 50, stn: "칠곡경대병원", dir: "left"},
-    {x: 450, y: 150, stn: "학정", dir: "left"},
-    {x: 450, y: 250, stn: "팔거", dir: "left"},
-    {x: 450, y: 350, stn: "동천", dir: "left"},
-    {x: 450, y: 450, stn: "칠곡운암", dir: "left"},
-    {x: 450, y: 550, stn: "구암", dir: "left"},
-    {x: 450, y: 650, stn: "태전", dir: "left"},
-    {x: 450, y: 750, stn: "매천", dir: "left"},
-    {x: 450, y: 850, stn: "매천시장", dir: "left"},
-    {x: 450, y: 950, stn: "팔달", dir: "left"},
-    {x: 450, y: 1050, stn: "공단", dir: "left"},
-    {x: 450, y: 1150, stn: "만평", dir: "left"},
-    {x: 450, y: 1250, stn: "팔달시장", dir: "left"},
-    {x: 450, y: 1350, stn: "원대", dir: "left"},
-    {x: 450, y: 1450, stn: "북구청", dir: "left"},
-    {x: 450, y: 1550, stn: "달성공원", dir: "left"},
-    {x: 450, y: 1650, stn: "서문시장", dir: "left"},
-    {x: 450, y: 1750, stn: "청라언덕", dir: "left"},
-    {x: 450, y: 1850, stn: "남산", dir: "left"},
-    {x: 450, y: 1950, stn: "명덕", dir: "left"},
-    {x: 450, y: 2050, stn: "건들바위", dir: "left"},
-    {x: 450, y: 2150, stn: "대봉교", dir: "left"},
-    {x: 450, y: 2250, stn: "수성시장", dir: "left"},
-    {x: 450, y: 2350, stn: "수성구민운동장", dir: "left"},
-    {x: 450, y: 2450, stn: "어린이회관", dir: "left"},
-    {x: 450, y: 2550, stn: "황금", dir: "left"},
-    {x: 450, y: 2650, stn: "수성못", dir: "left"},
-    {x: 450, y: 2750, stn: "지산", dir: "left"},
-    {x: 450, y: 2850, stn: "범물", dir: "left"},
-    {x: 450, y: 2950, stn: "용지", dir: "left"}
+    {x: 450, y: 50, stn: "칠곡경대병원"},
+    {x: 450, y: 150, stn: "학정"},
+    {x: 450, y: 250, stn: "팔거"},
+    {x: 450, y: 350, stn: "동천"},
+    {x: 450, y: 450, stn: "칠곡운암"},
+    {x: 450, y: 550, stn: "구암"},
+    {x: 450, y: 650, stn: "태전"},
+    {x: 450, y: 750, stn: "매천"},
+    {x: 450, y: 850, stn: "매천시장"},
+    {x: 450, y: 950, stn: "팔달"},
+    {x: 450, y: 1050, stn: "공단"},
+    {x: 450, y: 1150, stn: "만평"},
+    {x: 450, y: 1250, stn: "팔달시장"},
+    {x: 450, y: 1350, stn: "원대"},
+    {x: 450, y: 1450, stn: "북구청"},
+    {x: 450, y: 1550, stn: "달성공원"},
+    {x: 450, y: 1650, stn: "서문시장"},
+    {x: 450, y: 1750, stn: "청라언덕"},
+    {x: 450, y: 1850, stn: "남산"},
+    {x: 450, y: 1950, stn: "명덕"},
+    {x: 450, y: 2050, stn: "건들바위"},
+    {x: 450, y: 2150, stn: "대봉교"},
+    {x: 450, y: 2250, stn: "수성시장"},
+    {x: 450, y: 2350, stn: "수성구민운동장"},
+    {x: 450, y: 2450, stn: "어린이회관"},
+    {x: 450, y: 2550, stn: "황금"},
+    {x: 450, y: 2650, stn: "수성못"},
+    {x: 450, y: 2750, stn: "지산"},
+    {x: 450, y: 2850, stn: "범물"},
+    {x: 450, y: 2950, stn: "용지"}
 ]];
 var trn = ["반월당", "청라언덕", "명덕"];
 
@@ -101,12 +101,13 @@ for (var n = 0; n < 3; n++) {
     pos[n].forEach((e) => {
         src += '<circle cx="' + e.x + '" cy="' + e.y + '" r="11" onClick="onIconClicked(\'' + e.stn + '\');" />';
         if (trn.includes(e.stn)) return;
-        var x = e.x,
-            y = e.y;
-        if (e.dir == 'left') x += 30;
-        if (e.dir == 'right') x -= 30;
-        if (e.dir == 'center') y += 50;
-        src += '<text x=' + x + ' y=' + y + ' onClick="onTextClicked(this);" class=' + e.dir + '>' + e.stn + '</text>';
+        var x = e.x, y = e.y;
+        var dir = e.dir;
+        if (dir == null) dir = 'left';
+        if (dir == 'left') x += 30;
+        if (dir == 'right') x -= 30;
+        if (dir == 'center') y += 50;
+        src += '<text x=' + x + ' y=' + y + ' onClick="onTextClicked(this);" class=' + dir + '>' + e.stn + '</text>';
     });
 }
 var m = [16, 13, 19];
@@ -130,10 +131,8 @@ function updateData(data) {
     var src = '';
     data.forEach((e, i) => {
         e.forEach((e, j) => {
-            var p = pos[i][j],
-                size = 20;
-            var x = p.x,
-                y = p.y;
+            var p = pos[i][j], size = 20;
+            var x = p.x, y = p.y;
             y -= 20;
             if (p.rot) {
                 size = 40;
