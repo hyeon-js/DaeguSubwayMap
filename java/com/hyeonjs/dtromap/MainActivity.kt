@@ -2,18 +2,15 @@ package com.hyeonjs.dtromap
 
 import android.app.Activity
 import android.content.Intent
+import android.graphics.Bitmap
 import android.net.Uri
 import android.os.Bundle
 import android.view.Menu
 import android.view.MenuItem
-import android.webkit.WebChromeClient
-import android.webkit.WebSettings
-import android.webkit.WebView
-import android.webkit.WebViewClient
+import android.webkit.*
 import android.widget.LinearLayout
 import android.widget.Toast
 import com.hyeonjs.library.HttpRequester
-import java.lang.Exception
 
 
 class MainActivity : Activity() {
@@ -49,7 +46,20 @@ class MainActivity : Activity() {
         settings.javaScriptEnabled = true
         settings.builtInZoomControls = true
         web?.webChromeClient = WebChromeClient()
-        web?.webViewClient = WebViewClient()
+        web?.webViewClient = object : WebViewClient() {
+            override fun onPageStarted(view: WebView?, url: String?, favicon: Bitmap?) {
+                super.onPageStarted(view, url, favicon)
+            }
+
+            override fun shouldInterceptRequest(view: WebView?, url: String?): WebResourceResponse? {
+                return super.shouldInterceptRequest(view, url)
+            }
+
+            override fun onPageFinished(view: WebView, url: String?) {
+                updateSubwayInfo()
+                super.onPageFinished(view, url)
+            }
+        }
         web?.loadUrl("file:///android_asset/index.html")
         layout.addView(web)
         setContentView(layout)
@@ -79,6 +89,5 @@ class MainActivity : Activity() {
             Toast.makeText(this, msg, Toast.LENGTH_SHORT).show()
         }
     }
-
 
 }
