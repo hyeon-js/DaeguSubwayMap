@@ -1,6 +1,7 @@
 package com.hyeonjs.dtromap
 
 import android.app.Activity
+import android.app.AlertDialog
 import android.content.Intent
 import android.graphics.Bitmap
 import android.net.Uri
@@ -15,12 +16,14 @@ import com.hyeonjs.library.HttpRequester
 
 class MainActivity : Activity() {
 
+    val VERSION = "1.0";
     var web: WebView? = null
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         when (item.getItemId()) {
             0 -> updateSubwayInfo();
-//            1 ->
+            1 -> showDialog("앱 정보", "이름 : 대구 도시철도 노선도\n버전 : ${VERSION}\n개발자 : HyeonJS\n" +
+                    "  대구 도시철도의 노선도를 보여주는 앱이에요. 시간표 기반 운행 정보도 확인할 수 있어요.");
             2 -> startActivity(
                 Intent(Intent.ACTION_VIEW, Uri.parse("https://github.com/hyeon-js/DaeguSubwayMap"))
             )
@@ -82,6 +85,14 @@ class MainActivity : Activity() {
                 toast(e.toString())
             }
         }.start()
+    }
+
+    private fun showDialog(title: String, msg: String) {
+        val dialog = AlertDialog.Builder(this)
+        dialog.setTitle(title)
+        dialog.setMessage(msg)
+        dialog.setNegativeButton("닫기", null)
+        dialog.show()
     }
 
     private fun toast(msg: String) {
