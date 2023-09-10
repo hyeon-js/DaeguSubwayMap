@@ -58,7 +58,8 @@ public class HttpRequester {
             dis.close();
             return str.toString();
         } catch (Exception e) {
-            return e.toString();
+            return null;
+//            return e.toString();
 //            Log.i("_hjs", e.toString());
         }
     }
