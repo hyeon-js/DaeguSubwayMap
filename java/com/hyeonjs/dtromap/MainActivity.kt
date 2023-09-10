@@ -29,8 +29,9 @@ class MainActivity : Activity() {
             1 -> showDialog("앱 정보", "이름 : 대구 도시철도 노선도\n버전 : ${VERSION}\n개발자 : HyeonJS\n\n" +
                     "  대구 도시철도의 노선도를 보여주는 앱이에요. 시간표 기반 운행 정보도 확인할 수 있어요.\n\n" +
                     "  살짝 반투명한 검은색 아이콘이 있는 곳이 시간표상 열차가 있어야 할 곳이지만, 이 앱은 앱에서 제공하는 정보에 대한 보증을 하지 않아요.\n\n" +
-                    "  이 앱은 개인이 개발한 것으로 도시철도 운영 기관과는 관련이 없어요. 이 앱에서 제공하는 정보와 관련하여 해당 운영기관에 민원을 넣지 말아주세요.");
-            2 -> startActivity(
+                    "  이 앱은 개인이 개발한 것으로 도시철도 운영 기관과는 관련이 없어요. 이 앱에서 제공하는 정보와 관련하여 해당 운영기관에 민원을 넣지 말아주세요.")
+            2 -> startActivity(Intent(this, LicenseActivity::class.java))
+            3 -> startActivity(
                 Intent(Intent.ACTION_VIEW, Uri.parse("https://github.com/hyeon-js/DaeguSubwayMap"))
             )
         }
@@ -42,7 +43,8 @@ class MainActivity : Activity() {
             .setIcon(R.drawable.ic_update)
             .setShowAsAction(MenuItem.SHOW_AS_ACTION_IF_ROOM)
         menu.add(0, 1, 0, "앱 정보")
-        menu.add(0, 2, 0, "깃허브로 이동")
+        menu.add(0, 2, 0, "라이선스 정보")
+        menu.add(0, 3, 0, "깃허브로 이동")
         return true
     }
 
