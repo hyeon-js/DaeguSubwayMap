@@ -6,10 +6,13 @@ import android.content.Intent
 import android.graphics.Bitmap
 import android.net.Uri
 import android.os.Bundle
+import android.view.Gravity
 import android.view.Menu
 import android.view.MenuItem
 import android.webkit.*
 import android.widget.LinearLayout
+import android.widget.ScrollView
+import android.widget.TextView
 import android.widget.Toast
 import com.hyeonjs.library.HttpRequester
 
@@ -22,12 +25,10 @@ class MainActivity : Activity() {
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         when (item.getItemId()) {
             0 -> updateSubwayInfo();
-            1 -> showDialog(
-                "앱 정보", "이름 : 대구 도시철도 노선도\n버전 : ${VERSION}\n개발자 : HyeonJS\n\n" +
-                        "  대구 도시철도의 노선도를 보여주는 앱이에요. 시간표 기반 운행 정보도 확인할 수 있어요.\n\n" +
-                        "  살짝 반투명한 검은색 아이콘이 있는 곳이 시간표상 열차가 있어야 할 곳이지만, 이 앱은 앱에서 제공하는 정보에 대한 보증을 하지 않아요.\n\n" +
-                        "  이 앱은 개인이 개발한 것으로 도시철도 운영 기관과는 관련이 없어요. 이 앱에서 제공하는 정보와 관련하여 해당 운영기관에 민원을 넣지 말아주세요."
-            );
+            1 -> showDialog("앱 정보", "이름 : 대구 도시철도 노선도\n버전 : ${VERSION}\n개발자 : HyeonJS\n\n" +
+                    "  대구 도시철도의 노선도를 보여주는 앱이에요. 시간표 기반 운행 정보도 확인할 수 있어요.\n\n" +
+                    "  살짝 반투명한 검은색 아이콘이 있는 곳이 시간표상 열차가 있어야 할 곳이지만, 이 앱은 앱에서 제공하는 정보에 대한 보증을 하지 않아요.\n\n" +
+                    "  이 앱은 개인이 개발한 것으로 도시철도 운영 기관과는 관련이 없어요. 이 앱에서 제공하는 정보와 관련하여 해당 운영기관에 민원을 넣지 말아주세요.");
             2 -> startActivity(
                 Intent(Intent.ACTION_VIEW, Uri.parse("https://github.com/hyeon-js/DaeguSubwayMap"))
             )
@@ -65,10 +66,7 @@ class MainActivity : Activity() {
                 super.onPageStarted(view, url, favicon)
             }
 
-            override fun shouldInterceptRequest(
-                view: WebView?,
-                url: String?
-            ): WebResourceResponse? {
+            override fun shouldInterceptRequest(view: WebView?, url: String? ): WebResourceResponse? {
                 return super.shouldInterceptRequest(view, url)
             }
 
@@ -79,7 +77,14 @@ class MainActivity : Activity() {
         }
         web?.loadUrl("file:///android_asset/index.html")
         layout.addView(web)
-        setContentView(layout)
+        val txt = TextView(this)
+        txt.text = "© 2018-2023 Hyeon.js, All rights reserved.\n"
+        txt.textSize = 12f
+        txt.gravity = Gravity.CENTER
+        layout.addView(txt)
+        val scroll = ScrollView(this)
+        scroll.addView(layout)
+        setContentView(scroll)
     }
 
     private fun updateSubwayInfo() {
