@@ -4,6 +4,7 @@ import android.app.Activity
 import android.app.AlertDialog
 import android.content.Intent
 import android.graphics.Bitmap
+import android.graphics.Color
 import android.net.Uri
 import android.os.Bundle
 import android.view.Gravity
@@ -84,6 +85,7 @@ class MainActivity : Activity() {
         layout.addView(txt)
         val scroll = ScrollView(this)
         scroll.addView(layout)
+        scroll.setBackgroundColor(Color.WHITE)
         setContentView(scroll)
     }
 
