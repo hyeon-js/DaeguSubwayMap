@@ -3,6 +3,9 @@
 
 - 옛날에 만든 앱에서 일부 기능 분리 및 업그레이드
 
+## 라이선스
+- [HJS License 1](LICENSE.md)
+
 ## To do
 - [x] 노선도 이미지 벡터로 교체
 - [x] [열차 운행 정보 구현](https://github.com/hyeon-js/dtro-info)
