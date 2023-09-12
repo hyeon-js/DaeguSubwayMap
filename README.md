@@ -8,5 +8,5 @@
 
 ## To do
 - [x] 노선도 이미지 벡터로 교체
-- [x] [열차 운행 정보 구현](https://github.com/hyeon-js/dtro-info)
+- [x] 열차 운행 정보 구현 - [백엔드 레포](https://github.com/hyeon-js/dtro-info)
 - [ ] 이것저것 핵심 기능은 아니지만 필요한 것들 추가
