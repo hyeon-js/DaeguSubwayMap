@@ -16,9 +16,9 @@ class LicenseActivity : Activity() {
         val layout = LinearLayout(this)
         layout.orientation = 1
 
-        val names = arrayOf("대구 도시철도 노선도", "HttpRequester", "Material Design Icon")
-        val licenses = arrayOf("HJS License 1", "HJS License 1", "Apache License 2.0")
-        val files = arrayOf("hjs", "HttpRequester", "apache")
+        val names = arrayOf("대구 도시철도 노선도", "HttpRequester", "Material Design Icon", "나눔스퀘어")
+        val licenses = arrayOf("HJS License 1", "HJS License 1", "Apache License 2.0", "SIL OFL 1.1")
+        val files = arrayOf("hjs", "HttpRequester", "apache", "font")
 
         for (n in names.indices) {
             var name = names[n]
