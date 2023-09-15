@@ -20,6 +20,7 @@ class LicenseActivity : Activity() {
         val licenses = arrayOf("HJS License 1", "HJS License 1", "Apache License 2.0", "SIL OFL 1.1")
         val files = arrayOf("hjs", "HttpRequester", "apache", "font")
 
+        var pad = dip2px(8)
         for (n in names.indices) {
             var name = names[n]
             if (n > 0) name = "\n" + name
@@ -34,11 +35,12 @@ class LicenseActivity : Activity() {
             val value = TextView(this)
             value.text = readAssets(files[n])
             value.textSize = 18f
+            value.setPadding(pad, pad, pad, pad)
             value.setBackgroundColor(Color.parseColor("#EEEEEE"))
             layout.addView(value)
         }
 
-        val pad = dip2px(16)
+        pad = dip2px(16)
         layout.setPadding(pad, pad, pad, pad)
         val scroll = ScrollView(this)
         scroll.addView(layout)
