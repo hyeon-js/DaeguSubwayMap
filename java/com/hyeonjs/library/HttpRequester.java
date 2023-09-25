@@ -1,5 +1,10 @@
 package com.hyeonjs.library;
 
+/*
+HttpRequester.java
+© 2023 Hyeon.js, All rights reserved.
+*/
+
 import java.io.BufferedReader;
 import java.io.DataInputStream;
 import java.io.InputStreamReader;
