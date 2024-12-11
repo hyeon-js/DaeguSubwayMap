@@ -81,7 +81,7 @@ class MainActivity : Activity() {
         web?.loadUrl("file:///android_asset/index.html")
         layout.addView(web)
         val txt = TextView(this)
-        txt.text = "© 2018-2023 Hyeon.js, All rights reserved.\n"
+        txt.text = "© 2018-2024 Hyeon.js, All rights reserved.\n"
         txt.textSize = 12f
         txt.gravity = Gravity.CENTER
         layout.addView(txt)
